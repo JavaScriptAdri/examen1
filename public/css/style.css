@@ -1,0 +1,136 @@
+/* Estils generals */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+}
+
+/* Barra de navegació */
+nav {
+    background-color: #333;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    background-color: #575757;
+}
+
+/* Contingut principal */
+main {
+    padding: 20px;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+/* Reproductor de música */
+.music-player {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.controls button {
+    margin: 5px;
+    padding: 10px 15px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.controls button:hover {
+    background-color: #0056b3;
+}
+
+/* Llista de música */
+#music-list {
+    margin-top: 20px;
+}
+
+.music-item {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.music-item img {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+}
+
+.edit-btn, .delete-btn {
+    margin-left: auto;
+    padding: 5px 10px;
+    margin: 0 5px;
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 3px;
+}
+
+.edit-btn:hover {
+    background-color: #218838;
+}
+
+.delete-btn {
+    background-color: #dc3545;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+}
+
+/* Formulario para subir canciones */
+.upload-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.upload-form input[type="text"], .upload-form input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+.upload-form button {
+    padding: 10px 15px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.upload-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsivitat */
+@media (max-width: 768px) {
+    .music-item {
+        flex-direction: column;
+        text-align: center;
+    }
+}
