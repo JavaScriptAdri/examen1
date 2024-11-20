@@ -1,6 +1,6 @@
 <?php 
 include 'includes/header.php'; 
-include '../config/db.php'; 
+include 'includes/db.php'; 
 ?>
 <main>
     <h1>Altres funcionalitats</h1>

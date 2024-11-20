@@ -24,11 +24,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id'])) {
     $id = $_POST['id'];
     $title = $_POST['title'];
     $artist = $_POST['artist'];
+    $album = $_POST['album'] ?? null;
     $genre = $_POST['genre'] ?? null;
+    $year = $_POST['year'] ?? null;
 
-    // Recupera els valors de la cançó existent
-    $audioFile = isset($song['file']) ? $song['file'] : ''; // Nom actual del fitxer d'àudio
-    $coverImage = isset($song['cover_image']) ? $song['cover_image'] : ''; // Nom actual de la caràtula
+    $audioFile = $song['file']; // Nom actual del fitxer d'àudio
+    $coverImage = $song['cover_image']; // Nom actual de la caràtula
 
     // Processar la pujada del nou fitxer d'àudio
     if (isset($_FILES['audio']['name']) && $_FILES['audio']['name'] !== '') {
@@ -43,9 +44,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id'])) {
     }
 
     try {
-        // Actualitza les dades de la cançó (hem eliminat la columna 'year' de la consulta)
-        $stmt = $pdo->prepare("UPDATE music SET title = ?, artist = ?, genre = ?, file = ?, cover_image = ? WHERE id = ?");
-        $stmt->execute([$title, $artist, $genre, $audioFile, $coverImage, $id]);
+        // Actualitza les dades de la cançó
+        $stmt = $pdo->prepare("UPDATE music SET title = ?, artist = ?, album = ?, genre = ?, year = ?, file = ?, cover_image = ? WHERE id = ?");
+        $stmt->execute([$title, $artist, $album, $genre, $year, $audioFile, $coverImage, $id]);
 
         // Redirigeix a music.php després d'actualitzar
         header("Location: music.php");
@@ -62,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edita Cançó</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="../public/css/editar_canco.css">
 </head>
 <body>
     <div class="container">

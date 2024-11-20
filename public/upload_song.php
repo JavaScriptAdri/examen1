@@ -1,18 +1,12 @@
 <?php
 // Inclou la connexió a la base de dades
-include '../config/db.php';
+include 'includes/db.php';
 
 // Ruta de les carpetes
 $audioDir = '../uploads/audio/';
 $coverDir = '../uploads/covers/';
 
-// Comprovem si les carpetes existeixen i creem-les si no
-if (!file_exists($audioDir)) {
-    mkdir($audioDir, 0777, true);
-}
-if (!file_exists($coverDir)) {
-    mkdir($coverDir, 0777, true);
-}
+
 
 if (isset($_POST['submit'])) {
     // Obtenim les dades del formulari

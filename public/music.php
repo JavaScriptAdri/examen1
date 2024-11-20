@@ -1,10 +1,10 @@
 <?php 
 include 'includes/header.php'; 
-include '../config/db.php'; 
+include 'includes/db.php'; 
 ?>
 
 <main>
-    <h1>Explora la música</h1>
+    <h2>Explora la música</h2>
 
     <!-- Llista de Música -->
     <div id="music-list">
@@ -42,7 +42,7 @@ include '../config/db.php';
 
     <!-- Formulario per a pujar noves cançons -->
     <div class="upload-form">
-        <h2>Puig una nova cançó</h2>
+        <h2>Puja una nova cançó</h2>
         <form action="upload_song.php" method="POST" enctype="multipart/form-data">
             <label for="title">Títol:</label>
             <input type="text" name="title" id="title" required>

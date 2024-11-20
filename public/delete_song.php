@@ -1,5 +1,5 @@
 <?php
-include '../config/db.php';  // Incloure la connexió a la base de dades
+include '../public/includes/db.php';  // Incloure la connexió a la base de dades
 
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
